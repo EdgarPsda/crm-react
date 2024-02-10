@@ -1,14 +1,29 @@
-import { Form, redirect, useActionData, useNavigate } from "react-router-dom"
-import ClientForm from "../components/ClientForm"
+import { getClient, updateClient } from "../data/clients";
+import { Form, redirect, useActionData, useLoaderData, useNavigate } from "react-router-dom";
 import Error from "../components/Error";
-import { createClient } from "../data/clients";
+import ClientForm from "../components/ClientForm";
 
-export async function action({ request }) {
+export async function loader({ params }) {
+    const client = await getClient(params.id);
+
+    if (Object.values(client).length === 0) {
+        throw new Response('', {
+            status: 404,
+            statusText: 'No Results'
+        });
+    }
+
+    return client;
+}
+
+export async function action({ request, params }) {
+
+
     const formData = await request.formData();
-
     const data = Object.fromEntries(formData);
-
     const email = formData.get('email');
+
+    console.log(data);
 
     // Validate
     const errors = [];
@@ -26,21 +41,23 @@ export async function action({ request }) {
         return errors;
     }
 
-    // Send data to JSON-server
-    await createClient(data);
+    // Update client's data
+    await updateClient(params.id, data);
 
     return redirect("/");
+
 }
 
-function NewClient() {
+const EditClient = () => {
 
-    const errors = useActionData();
     const navigate = useNavigate();
+    const client = useLoaderData();
+    const errors = useActionData();
 
     return (
         <>
-            <h1 className="font-black text-4xl text-blue-900">New Client</h1>
-            <p className="mt-3">Fill all fields to create a new client</p>
+            <h1 className="font-black text-4xl text-blue-900">Edit Client</h1>
+            <p className="mt-3">Update client's information</p>
 
             <div className="flex justify-end">
                 <button
@@ -56,11 +73,11 @@ function NewClient() {
                 <Form
                     method="POST"
                 >
-                    <ClientForm></ClientForm>
+                    <ClientForm client={client}></ClientForm>
                     <input
                         type="submit"
                         className="mt-5 w-full bg-blue-800 p-3 uppercase font-bold text-white text-lg"
-                        value="Register Client"
+                        value="Save Changes"
                     />
                 </Form>
             </div>
@@ -68,4 +85,4 @@ function NewClient() {
     )
 }
 
-export default NewClient
+export default EditClient

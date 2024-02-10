@@ -1,39 +1,48 @@
 {
-    "clients": [
-        {
-            "id": 1,
-            "nombre": "Juan",
-            "telefono": 102013313,
-            "email": "juan@psdadev.com",
-            "empresa": "PsdaDev"
-        },
-        {
-            "id": 2,
-            "nombre": "Karen",
-            "telefono": 138198313,
-            "email": "karen@psdadev.com",
-            "empresa": "PsdaDev"
-        },
-        {
-            "id": 3,
-            "nombre": "Josue",
-            "telefono": 31983913,
-            "email": "josue@psdadev.com",
-            "empresa": "PsdaDev"
-        },
-        {
-            "id": 4,
-            "nombre": "Miguel",
-            "telefono": 319381983,
-            "email": "miguel@psdadev.com",
-            "empresa": "PsdaDev"
-        },
-        {
-            "id": 5,
-            "nombre": "Pedro",
-            "telefono": 1398198938,
-            "email": "pedro@psdadev.com",
-            "empresa": "PsdaDev"
-        }
-    ]
+  "clients": [
+    {
+      "id": "1",
+      "name": "Juan",
+      "telephone": 102013313,
+      "email": "juan@psdadev.com",
+      "company": "PsdaDev"
+    },
+    {
+      "id": "2",
+      "name": "Karen",
+      "telephone": 138198313,
+      "email": "karen@psdadev.com",
+      "company": "PsdaDev"
+    },
+    {
+      "id": "3",
+      "name": "Josue",
+      "telephone": 31983913,
+      "email": "josue@psdadev.com",
+      "company": "PsdaDev"
+    },
+    {
+      "id": "4",
+      "name": "Miguel",
+      "telephone": 319381983,
+      "email": "miguel@psdadev.com",
+      "company": "PsdaDev"
+    },
+    {
+      "name": "Edgar Posada",
+      "company": "dotCMS",
+      "email": "edgar.psda@gmail.com",
+      "telephone": "+52 686 5241746",
+      "notes": "asdf",
+      "id": "a102"
+    },
+    {
+      "name": "EdgarPsda (updated)",
+      "company": "PsdaDev",
+      "email": "edgar@email.com",
+      "telephone": "+52 686 5241746",
+      "notes": "New note",
+      "id": "d10a"
+    }
+  ]
 }
