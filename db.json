@@ -1,13 +1,6 @@
 {
   "clients": [
     {
-      "id": "1",
-      "name": "Juan",
-      "telephone": 102013313,
-      "email": "juan@psdadev.com",
-      "company": "PsdaDev"
-    },
-    {
       "id": "2",
       "name": "Karen",
       "telephone": 138198313,
@@ -22,17 +15,10 @@
       "company": "PsdaDev"
     },
     {
-      "id": "4",
-      "name": "Miguel",
-      "telephone": 319381983,
-      "email": "miguel@psdadev.com",
-      "company": "PsdaDev"
-    },
-    {
       "name": "Edgar Posada",
       "company": "dotCMS",
       "email": "edgar.psda@gmail.com",
-      "telephone": "+52 686 5241746",
+      "telephone": 138198313,
       "notes": "asdf",
       "id": "a102"
     },
@@ -40,9 +26,17 @@
       "name": "EdgarPsda (updated)",
       "company": "PsdaDev",
       "email": "edgar@email.com",
-      "telephone": "+52 686 5241746",
+      "telephone": 138198313,
       "notes": "New note",
       "id": "d10a"
+    },
+    {
+      "name": "Enrique 2",
+      "company": "Verizon",
+      "email": "edgar@verizon.com",
+      "telephone": 138198313,
+      "notes": "No notes",
+      "id": "add2"
     }
   ]
 }
